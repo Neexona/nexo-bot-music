@@ -1,5 +1,3 @@
-PROJET CELESTIA
-
-BOT MUSIQUE construit sous discord.js 
+Bot musical crée en avec Node.js
 
 
