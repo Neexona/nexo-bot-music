@@ -38,7 +38,7 @@ bot.on('error', (e) => console.error(e));
 bot.on('warn', (e) => console.warn(e));
 // bot.on('debug', (e) => console.info(e));
 
-bot.login(token);
+bot.login(process.env.TOKEN);
 
 function getCmdFunction(cmd) {
     const COMMANDS = {
@@ -54,7 +54,7 @@ function getCmdFunction(cmd) {
 }
 
 exports.setYoutubeKey = function(key) {
-	yt_api_key = key;
+	yt_api_key = (process.env.YT_API_KEY);
 }
 
 
