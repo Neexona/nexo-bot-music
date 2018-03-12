@@ -243,7 +243,7 @@ class MusicPlayer {
     */
     leaveVc(msg) {
         if (this.voiceConnection) {
-            this.musicChannel.send(`Leaving **${this.voiceConnection.channel.name}**.`);
+            this.musicChannel.send(`J'ai quitté **${this.voiceConnection.channel.name}**.`);
             this.musicChannel = null;
             if (this.dispatch)
                 this.dispatch.end('leave');
