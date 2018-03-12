@@ -278,7 +278,7 @@ function prune(msg){
                 if (silentOption) {
                     msg.delete();
                 } else {
-                    msg.channel.send(`Nombres de  ${tool.wrap(prunedAmount)} messages supprimer.`);
+                    msg.channel.send(`Nombres de  ${tool.wrap(prunedAmount)} messages supprimés.`);
                 }
             }
         }
