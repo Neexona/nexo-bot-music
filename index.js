@@ -1,10 +1,10 @@
 'use strict';
 const Discord = require('discord.js');
 
-const config = require('./config.json');
 const cmds = require('./commands.js');
 const music = require('./music.js');
 const tool = require('./tool.js');
+const prefix = '+';
 
 const prompt = require('prompt');
 const colors = require('colors');
@@ -17,7 +17,7 @@ bot.on('ready', () => {
     console.log(`${bot.user.username}  lancé.`);
     console.log(`Activé dans le serveur ${bot.guilds.size}.`);
 
-    bot.user.setGame(config.prefix + 'help');
+    bot.user.setGame(prefix + 'help');
 
 
     //Internal bot commands.
@@ -27,10 +27,10 @@ bot.on('message', msg => {
     if (msg.author.bot || msg.channel.type != 'text')
         return; // Do not respond to messages from bots or messages that are not from guilds.
 
-    if (!msg.content.startsWith(config.prefix))
+    if (!msg.content.startsWith(prefix))
         return; //Not a command.
 
-    let cmd = msg.content.split(/\s+/)[0].slice(config.prefix.length).toLowerCase();
+    let cmd = msg.content.split(/\s+/)[0].slice(prefix.length).toLowerCase();
     getCmdFunction(cmd)(msg);
 });
 
@@ -38,7 +38,7 @@ bot.on('error', (e) => console.error(e));
 bot.on('warn', (e) => console.warn(e));
 // bot.on('debug', (e) => console.info(e));
 
-bot.login(config.token);
+bot.login(token);
 
 function getCmdFunction(cmd) {
     const COMMANDS = {
@@ -53,6 +53,9 @@ function getCmdFunction(cmd) {
     return COMMANDS[cmd] ? COMMANDS[cmd] : () => {};
 }
 
+exports.setYoutubeKey = function(key) {
+	yt_api_key = key;
+}
 
 
 
