@@ -1,6 +1,5 @@
 
 'use strict';
-const config = require('./config.json');
 const tool = require('./tool.js');
 const ytdl = require('ytdl-core');
 const ySearch = require("youtube-search");
@@ -76,7 +75,7 @@ function processInput(msg, guild) {
 function processSearch(msg, guild, searchQuery) {
 const opts = {
     maxResults: 3,
-    key: config.youtube_api_key
+    key: yt_api_key
 };
     ySearch(searchQuery, opts, function (err, results) {
         if (err) {
@@ -147,7 +146,7 @@ const processYoutube = {
 
         async function getPlaylistName() {  
             let options = {
-                url: `${youtubeApiUrl}playlists?id=${playlistId}&part=snippet&key=${config.youtube_api_key}`
+                url: `${youtubeApiUrl}playlists?id=${playlistId}&part=snippet&key=${yt_api_key}`
             }
             let body = await rp(options);
             let playlistTitle = JSON.parse(body).items[0].snippet.title;
@@ -162,7 +161,7 @@ const processYoutube = {
                 '';
 
             let options = {
-                url: `${youtubeApiUrl}playlistItems?playlistId=${playlistId}${pageToken}&part=snippet,contentDetails&fields=nextPageToken,items(snippet(title,resourceId/videoId,thumbnails),contentDetails)&maxResults=50&key=${config.youtube_api_key}`
+                url: `${youtubeApiUrl}playlistItems?playlistId=${playlistId}${pageToken}&part=snippet,contentDetails&fields=nextPageToken,items(snippet(title,resourceId/videoId,thumbnails),contentDetails)&maxResults=50&key=${yt_api_key}`
             }
 
             let body = await rp(options);
