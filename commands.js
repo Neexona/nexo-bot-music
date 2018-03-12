@@ -1,5 +1,4 @@
 'use strict';
-const config = require('./config.json');
 const commandHelp = require('./help.js');
 const tool = require('./tool.js');
 const rp = require('request-promise');
@@ -97,7 +96,7 @@ function help(msg) {
 
     let helpStr;
     if (args.length == 1) { 
-        if (args[0].charAt(0) == config.prefix) 
+        if (args[0].charAt(0) == prefix) 
             args[0] = args[0].slice(1);
         helpStr = commandHelp[args[0]];
     }
