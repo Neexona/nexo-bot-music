@@ -75,7 +75,7 @@ function processInput(msg, guild) {
 function processSearch(msg, guild, searchQuery) {
 const opts = {
     maxResults: 3,
-    key: yt_api_key
+    key: process.env.YT_API_KEY
 };
     ySearch(searchQuery, opts, function (err, results) {
         if (err) {
