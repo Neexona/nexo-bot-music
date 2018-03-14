@@ -12,7 +12,9 @@ module.exports = {
     'debug': debug,
     'help': help,
     'kick': kick,
-    'prune': prune
+    'prune': prune,
+    'hug' : hug,
+    'patpat' : patpat
 }
 
 
@@ -138,6 +140,24 @@ function ban(msg) {
             reason: reason ? reason : 'none'
         };
         memberToBan.ban(banOptions);
+    }
+}
+
+function hug(msg) {
+    let memberhug = msg.mentions.members.first();
+    if(!memberhug){
+        message.send("Je n'ai pas trouvé ton ami pour ton câlin... Desolée..")
+    }else{
+        message.send(`${user.mentions.username} à reçu un câlin de ${user.author.username}`);
+    }
+}
+
+function patpat(msg) {
+    let memberpatpat = msg.mentions.members.first();
+    if(!memberpatpat){
+        message.send("Je n'ai pas trouvé ton ami pour ton pat pat... Desolée..")
+    }else{
+        message.send(`${user.mentions.username} à reçu un pat pat de ${user.author.username}`);
     }
 }
 
