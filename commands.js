@@ -146,18 +146,18 @@ function ban(msg) {
 function hug(msg) {
     let memberhug = msg.mentions.members.first();
     if(!memberhug){
-        message.send("Je n'ai pas trouvé ton ami pour ton câlin... Desolée..")
+        message.reply("Je n'ai pas trouvé ton ami pour ton câlin... Desolée..")
     }else{
-        message.send(`${user.mentions.username} à reçu un câlin de ${user.author.username}`);
+        message.reply(`${user.mentions.username} à reçu un câlin de ${user.author.username}`);
     }
 }
 
 function patpat(msg) {
     let memberpatpat = msg.mentions.members.first();
     if(!memberpatpat){
-        message.send("Je n'ai pas trouvé ton ami pour ton pat pat... Desolée..")
+        message.reply("Je n'ai pas trouvé ton ami pour ton pat pat... Desolée..")
     }else{
-        message.send(`${user.mentions.username} à reçu un pat pat de ${user.author.username}`);
+        message.reply(`${user.mentions.username} à reçu un pat pat de ${user.author.username}`);
     }
 }
 
