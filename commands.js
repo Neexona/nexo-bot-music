@@ -148,7 +148,7 @@ function hug(msg) {
     if(!memberhug){
         message.reply("Je n'ai pas trouvé ton ami pour ton câlin... Desolée..")
     }else{
-        message.reply(`${user.mentions.username} à reçu un câlin de ${user.author.username}`);
+        message.reply(`${memberhug.mentions.username} à reçu un câlin de ${user.author.username}`);
     }
 }
 
@@ -157,7 +157,7 @@ function patpat(msg) {
     if(!memberpatpat){
         message.reply("Je n'ai pas trouvé ton ami pour ton pat pat... Desolée..")
     }else{
-        message.reply(`${user.mentions.username} à reçu un pat pat de ${user.author.username}`);
+        message.reply(`${memberpatpat.mentions.username} à reçu un pat pat de ${user.author.username}`);
     }
 }
 
