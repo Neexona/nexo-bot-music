@@ -1,5 +1,5 @@
 'use strict';
-const prefix = '+';
+const prefix = 'a!';
 const commandHelp = require('./help.js');
 const tool = require('./tool.js');
 const rp = require('request-promise');
