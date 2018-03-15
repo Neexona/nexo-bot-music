@@ -1,7 +1,7 @@
 {
   "name": "ahri",
   "version": "1.0.0",
-  "description": "A personal Discord bot written using discord.js.",
+  "description": "Un bot personnel crée en JS.",
   "main": "index.js",
   "dependencies": {
     "discord.js": "^11.2.1",
