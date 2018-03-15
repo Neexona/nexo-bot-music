@@ -14,7 +14,7 @@ module.exports = {
     'kick': kick,
     'prune': prune,
     'hug' : hug,
-    'patpat' : patpat
+    'patpat' : patpat,
 }
 
 
