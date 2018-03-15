@@ -17,7 +17,7 @@ bot.on('ready', () => {
     console.log(`${bot.user.username}  lancé.`);
     console.log(`Activé dans le serveur ${bot.guilds.size}.`);
 
-    bot.user.setGame(prefix + 'help');
+    bot.user.setGame(prefix + 'help pour avoir un coup de main');
 
 
     //Internal bot commands.
