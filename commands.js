@@ -128,45 +128,6 @@ function help(msg) {
         });
 }
 
-function np(msg){
-
-        var reponse = "Maintenant joué : ";
-        if(is_bot_playing()) {
-            response += "\"" + now_playing_data["title"] + "\" (demandé par " + now_playing_data["user"] + ")";
-        } else {
-            response += "Rien !";
-        }
-
-        message.reply(response);
-        }
-function setusername(msg){
-    var userName = params[1];
-    if (aliases.hasOwnProperty(userName.toLowerCase())) {
-        userName = aliases[userName.toLowerCase()];
-    }
-
-    bot.user.setUsername(userName).then(user => {
-        message.reply('✔ Mon nom à été changé !');
-    })
-    .catch((err) => {
-        message.reply('Impossible de changer mon nom !');
-        console.log('Error on setusername command:', err);
-    });
-}
-
-function setavatar(msg){
-    var url = params[1];
-    if (aliases.hasOwnProperty(url.toLowerCase())) {
-        url = aliases[url.toLowerCase()];
-    }
-
-    bot.user.setAvatar(url).then(user => {
-        message.reply('✔ Mon image à été changé !');
-    })
-    .catch((err) => {
-        message.reply(`Impossible de changer mon avatar !`);
-        console.log('Error on setavatar command:', err); 
-});
 
 function ban(msg) {
     if (!msg.member.hasPermission('BAN_MEMBERS')) {
