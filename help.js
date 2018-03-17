@@ -11,14 +11,6 @@ Choisit aléatoirement entre le (s) choix fourni (s).`,
 ~prune <amount> [options]
 Élague les derniers messages <amount>.
 
-    'setavatar': 
-~setavatar <image> 
-Change l'image du bot.
-
-    'setusername':
-~setusername <nom>
-Change le nom du bot.
-
    Options:
       [--bots]            : Seulement effacer les messages du bot.
       [--user <name>]     : Seulement les messages d'un utilisateur précis.
