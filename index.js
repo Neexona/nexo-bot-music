@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 const cmds = require('./commands.js');
 const music = require('./music.js');
 const tool = require('./tool.js');
-const prefix = 'a!';
+const prefix = '+';
 
 const prompt = require('prompt');
 const colors = require('colors');
