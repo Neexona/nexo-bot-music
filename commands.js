@@ -5,10 +5,24 @@ const tool = require('./tool.js');
 const rp = require('request-promise');
 const stripIndent = require('strip-indent');
 const os = require('os');
+const bot = require('discord.js');
 
 var now_playing_data = {};
 var stopped = false;
 var inform_np = true;
+
+function handle_command(message, text) {
+	var params = text.split(" ");
+	var command = search_command(params[0]);
+
+	if(command) {
+		if(params.length - 1 < command.parameters.length) {
+			message.reply("Insufficient parameters!");
+		} else {
+			command.execute(message, params);
+		}
+	}
+}
 
 module.exports = {
     'ban': ban,
@@ -19,6 +33,7 @@ module.exports = {
     'prune': prune,
     'hug' : hug,
     'patpat' : patpat,
+    'setusername' : setusername,
 }
 
 
@@ -127,6 +142,25 @@ function help(msg) {
             'code': 'css'
         });
 }
+
+	{
+    function setusername(msg) {
+		execute: function (message, params) {
+
+			var userName = params[1];
+			if (aliases.hasOwnProperty(userName.toLowerCase())) {
+				userName = aliases[userName.toLowerCase()];
+			}
+
+			bot.user.setUsername(userName).then(user => {
+				message.reply('✔ Mon nom à été changé !');
+			})
+			.catch((err) => {
+				message.reply('Error: Unable to set username');
+				console.log('Error on setusername command:', err);
+			});
+		}
+	},
 
 
 function ban(msg) {
