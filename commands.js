@@ -11,19 +11,6 @@ var now_playing_data = {};
 var stopped = false;
 var inform_np = true;
 
-function handle_command(message, text) {
-	var params = text.split(" ");
-	var command = search_command(params[0]);
-
-	if(command) {
-		if(params.length - 1 < command.parameters.length) {
-			message.reply("Insufficient parameters!");
-		} else {
-			command.execute(message, params);
-		}
-	}
-}
-
 module.exports = {
     'ban': ban,
     'choose': choose,
@@ -140,9 +127,6 @@ function help(msg) {
         });
 }
 
-	{
-
-
 function ban(msg) {
     if (!msg.member.hasPermission('BAN_MEMBERS')) {
         return msg.channel.send(`Vous n'avez pas la permissions de ban !`);
@@ -161,7 +145,6 @@ function ban(msg) {
         memberToBan.ban(banOptions);
     }
 }
-
 
 function kick(msg){
     if(!msg.member.hasPermisson('KICK_MEMBERS')){
