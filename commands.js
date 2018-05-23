@@ -31,9 +31,6 @@ module.exports = {
     'help': help,
     'kick': kick,
     'prune': prune,
-    'hug' : hug,
-    'patpat' : patpat,
-    'setusername' : setusername,
 }
 
 
@@ -144,23 +141,6 @@ function help(msg) {
 }
 
 	{
-    function setusername(msg) {
-		execute: function (message, params) {
-
-			var userName = params[1];
-			if (aliases.hasOwnProperty(userName.toLowerCase())) {
-				userName = aliases[userName.toLowerCase()];
-			}
-
-			bot.user.setUsername(userName).then(user => {
-				message.reply('✔ Mon nom à été changé !');
-			})
-			.catch((err) => {
-				message.reply('Error: Unable to set username');
-				console.log('Error on setusername command:', err);
-			});
-		}
-	},
 
 
 function ban(msg) {
@@ -182,23 +162,6 @@ function ban(msg) {
     }
 }
 
-function hug(msg) {
-    let memberhug = msg.mentions.members.first();
-    if(!memberhug){
-        return msg.channel.send("Je n'ai pas trouvé ton ami pour ton câlin... Desolée..")
-    }else{
-        msg.channel.send(`${memberhug.mentions.displayname} à reçu un câlin de ${user.author.displayname}`);
-    }
-}
-
-function patpat(msg) {
-    let memberpatpat = msg.mentions.members.first();
-    if(!memberpatpat){
-        return msg.channel.send("Je n'ai pas trouvé ton ami pour ton pat pat... Desolée..")
-    }else{
-        msg.channel.send(`${memberpatpat.mentions.displayname} à reçu un pat pat de ${user.author.displayname}`);
-    }
-}
 
 function kick(msg){
     if(!msg.member.hasPermisson('KICK_MEMBERS')){
